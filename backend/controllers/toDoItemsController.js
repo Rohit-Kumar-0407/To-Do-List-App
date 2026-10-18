@@ -1,6 +1,6 @@
 const toDoModel = require('../models/ToDoItem');
 
-exports.postCreateItem = async (req, res, next) => {
+exports.getAllItems = async (req, res, next) => {
     try {
         const items = await toDoModel.find();
         res.json(items);
@@ -9,7 +9,7 @@ exports.postCreateItem = async (req, res, next) => {
     }
 }
 
-exports.getAllItems = async (req, res, next) => {
+exports.postItem = async (req, res, next) => {
     try {
         console.log(req.body);
         const {task, date} = req.body;
